@@ -17,6 +17,9 @@ const slides = [
 	}
 ]
 
+console.log(slides.length)
+
+// Ajout d'Event Listeners sur les flèches et sur les bullet points
 let leftBtn = document.querySelector(".arrow_left")
 leftBtn.addEventListener("click", function() {
 	console.log("Vous avez cliqué sur la flèche gauche")
@@ -26,3 +29,21 @@ let rightBtn = document.querySelector(".arrow_right")
 rightBtn.addEventListener("click", function() {
 	console.log("Vous avez cliqué sur la flèche droite")
 })
+
+let activeDot = document.querySelector(".dots")
+activeDot.addEventListener("click", function() {
+	console.log("Vous avez cliqué sur le bullet point")
+})
+
+// Ajout des bullet points sur le slider
+const dotDiv = document.querySelector(".dots")
+
+for(let i = 0; i < slides.length; i++) {
+	const dot = document.createElement("span")
+	dot.classList.add("dot") 
+	dotDiv.appendChild(dot)
+}
+
+// Différencier le slide en cours de visionnage en remplissant le bullet point 
+const currentSlide = dotDiv.querySelector(".dot");
+currentSlide.classList.add("dot_selected");

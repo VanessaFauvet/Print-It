@@ -17,7 +17,7 @@ const slides = [
 	}
 ]
 
-let currentSlideIndex = 0
+currentSlideIndex = 0
 
 console.log(slides.length)
 
@@ -70,7 +70,7 @@ function updateSlide(index) {
         index = 0;
     }
 
-    // Mettre à jour le slide actuel
+    // Mettre à jour le slide
     currentSlideIndex = index;
     bannerImg.src = "./assets/images/slideshow/" + slides[index].image;
     tagLine.innerHTML = slides[index].tagLine;
